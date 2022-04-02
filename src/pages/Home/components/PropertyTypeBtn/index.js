@@ -6,7 +6,7 @@ export const PropertyTypeBtn = ({icon, label}) => (
     <Fragment>
         <PropertyTypeBtnWrapper>
             <a href="#">
-                <p><FaBuilding/></p>
+                <p class="icon">{icon}</p>
                 <p>{label}</p>
             </a>
 
