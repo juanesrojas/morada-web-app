@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import { GlobalStyle } from "./globalStyles";
+import { Home as Home2} from "./pages/Home";
+import { PropertyTypeBtn } from "./pages/Home/components/PropertyTypeBtn";
+// Home as Home2 se usa si existen varios componentes con el mismo nombre y los voy a invocar en este componente.
+export const App=()=> (
+    <>
+    <GlobalStyle/>
+        <Home2 />
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    </>   
 
-export default App;
+        
+)
