@@ -35,6 +35,7 @@ export const Home = () => (
                 PropertyTypes.map(item => <PropertyTypeBtn icon={item.icon} label={item.label} /> )
             }
 
+
         </PropertyTypesContainer>
 
 
