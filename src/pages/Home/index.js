@@ -7,6 +7,7 @@ import { FaHouseUser } from 'react-icons/fa';
 import { FaWarehouse } from 'react-icons/fa';
 import { FaTree } from 'react-icons/fa';
 import { FaTractor } from 'react-icons/fa';
+import { HomeMessage } from "./components/MessageBox";
 
 const PropertyTypes = [
     {icon: <FaBuilding/>, label:'Apartamentos'},
@@ -23,19 +24,15 @@ const PropertyTypes = [
 export const Home = () => (
 
     <>
-        <div style={{width:"600px"}} >
-        <h1>Morada</h1>
-        <UserHomeInfo userName={"Juan Rojas"} userPicture={"C:/Users/Alienware Alpha/Documents/Diplomado FullStack/Proyectos/MORADA-APP/morada-web-app/src/pages/Home/components/UserHomeInfo/images/profile_picture.png"}/>
-       <div>
-           <h2>Find</h2>
-           <h2>best place nearby</h2>
-       </div>
+        <div style={{width:"600px",padding:0,"margin":"auto",display:"flex", "flex-direction":"column"}} >
+        <img style={{"justify-content":"center"}} src={require("./components/UserHomeInfo/images/Logo.JPG")}/>
+
+        <UserHomeInfo userName={"Juan Rojas"} userPicture={require("./components/UserHomeInfo/images/profile_picture.png")}/>
+       <HomeMessage/>
         <PropertyTypesContainer>
             {//código jsx
                 PropertyTypes.map(item => <PropertyTypeBtn icon={item.icon} label={item.label} /> )
             }
-
-
         </PropertyTypesContainer>
 
 
