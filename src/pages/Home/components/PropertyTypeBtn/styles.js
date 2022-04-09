@@ -10,7 +10,7 @@ export const PropertyTypeBtnWrapper = styled.div`
     padding:10px;
 
     p{
-        color:#6A1B9A;
+        color:#4A148C;
         font-size: 0.8em;
         font-weight: 700;
         margin:0px;
