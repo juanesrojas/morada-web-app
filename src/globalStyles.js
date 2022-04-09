@@ -8,3 +8,11 @@ export const GlobalStyle = createGlobalStyle`
 
     }
 `;
+
+export const SubTitle = styled.p`
+        font-weight: 300;
+        color:#BDBDBD;
+        font-size: 1.0em;
+        text-transform: capitalize;
+        margin: 0.1em;
+`;

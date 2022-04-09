@@ -1,17 +1,18 @@
 import { Fragment } from "react";
 import { UserHomeInfoWrapper } from "./styles";
 import { FaRegBell } from 'react-icons/fa';
+import { SubTitle } from "../../../../globalStyles";
 
 
 export const UserHomeInfo = ({userName,userPicture}) => (
     <Fragment>
         <UserHomeInfoWrapper>  
-            <div class="user-picture"> <img class="picture-box" src={userPicture}/> </div>    
-            <div class="user-home-info">
-                <p><span>Hola!</span></p>
+            <div className="user-picture"> <img class="picture-box" src={userPicture}/> </div>    
+            <div className="user-home-info">
+            <SubTitle>Hola!</SubTitle>
                 <h4>{userName}</h4>
             </div>
-            <div class="alerts-container"><div class="alerts-bell"><FaRegBell/></div></div>
+            <div className="alerts-container"><div class="alerts-bell"><FaRegBell/></div></div>
         </UserHomeInfoWrapper>
     </Fragment>
 )

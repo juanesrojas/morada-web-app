@@ -9,16 +9,14 @@ export const UserHomeInfoWrapper = styled.div`
     margin:10px 0px;
     padding:10px;
     display:flex;
+
     div{
         margin:0px 5px;
         padding:10px;
         background-color:white;
     };
 
-    p{
-        color:#6A1B9A;
-        margin: 0.1em;
-    }
+
 
     p span{
         font-weight: 300;

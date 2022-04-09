@@ -1,15 +1,14 @@
 import { Fragment } from "react";
-import { PropertyTypeBtnWrapper } from "./styles";
-import { FaBuilding } from 'react-icons/fa';
+import { IconWrapper, PropertyTypeBtnWrapper } from "./styles";
 
-export const PropertyTypeBtn = ({icon, label}) => (
+
+export const PropertyTypeBtn = ({icon:Icon, label}) => (
     <Fragment>
-        <PropertyTypeBtnWrapper>
-            <a href="#">
-                <p class="icon">{icon}</p>
-                <p>{label}</p>
-            </a>
-
+        <PropertyTypeBtnWrapper>           
+                <IconWrapper>
+                   <Icon />                    
+                </IconWrapper>        
+                <p>{label}</p>            
         </PropertyTypeBtnWrapper>
     </Fragment>
 )
