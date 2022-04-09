@@ -1,12 +1,15 @@
 import { PropertyTypeLabelWrapper } from "./styles";
 
 
-export const PropertyTypeLabel = ({typeId}) =>(
 
+export const PropertyTypeLabel = ({icon:Icon,typeId}) =>(
     <PropertyTypeLabelWrapper>
-        <p>
-            {typeId}
-        </p>
+        <div>
+            <Icon/>
+            <p>
+                {typeId}
+            </p>
+        </div>
     </PropertyTypeLabelWrapper>
 
 )

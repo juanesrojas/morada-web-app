@@ -3,6 +3,7 @@ import { SubTitle } from "../../../../globalStyles";
 import { PropertyBusinessType } from "../PropertyBusinessType";
 import { PropertyTypeLabel } from "../PropertyTypeLabel";
 import { PropertyCardWrapper, PropertyImageWrapper, PropertyInfoWrapper } from "./styles";
+import { FaHandshake,FaBuilding } from 'react-icons/fa';
 
 
 export const PropertyCard = () =>(
@@ -15,8 +16,8 @@ export const PropertyCard = () =>(
             <PropertyInfoWrapper>
                 <h3>Apartamento en Laureles</h3>
                 <SubTitle>Laureles, Medellín</SubTitle>
-                <PropertyTypeLabel typeId={"Apartamento"} />
-                <PropertyBusinessType typeId={"Venta"}/>
+                <PropertyTypeLabel icon={FaBuilding} typeId={"Apartamento"} />
+                <PropertyBusinessType icon={FaHandshake} typeId={"Venta"}/>
                 <p>$400.000.000</p>
             </PropertyInfoWrapper>
 

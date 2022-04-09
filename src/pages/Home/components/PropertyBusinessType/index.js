@@ -1,13 +1,16 @@
 import { PropertyBusinessTypeWrapper } from "./styles";
-import { FaHandshake } from 'react-icons/fa';
 
 
-export const PropertyBusinessType = ({typeId}) =>(
+
+export const PropertyBusinessType = ({icon:Icon,typeId}) =>(
     <PropertyBusinessTypeWrapper>
-        <FaHandshake/>
-        <p>
-            {typeId}
-        </p>
+        <div>
+            <Icon/>
+            <p>
+                {typeId}
+            </p>
+        </div>
+
     </PropertyBusinessTypeWrapper>
 
 
