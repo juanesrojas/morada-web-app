@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/morada-web-app/static/js/main.6f644a56.js",
+    "main.js": "/morada-web-app/static/js/main.b9ce2c96.js",
     "static/media/profile_picture.png": "/morada-web-app/static/media/profile_picture.e49dda644286be36c189.png",
     "static/media/Logo.JPG": "/morada-web-app/static/media/Logo.ba390ab9ec57f4467f2c.JPG",
     "index.html": "/morada-web-app/index.html",
-    "main.6f644a56.js.map": "/morada-web-app/static/js/main.6f644a56.js.map"
+    "main.b9ce2c96.js.map": "/morada-web-app/static/js/main.b9ce2c96.js.map"
   },
   "entrypoints": [
-    "static/js/main.6f644a56.js"
+    "static/js/main.b9ce2c96.js"
   ]
 }
