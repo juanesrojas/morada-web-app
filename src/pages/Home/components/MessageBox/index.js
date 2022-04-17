@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { HomeMessageBox } from "./styles";
 import { FaRegBell } from 'react-icons/fa';
+import { Title } from "../../../../globalStyles";
 
 
 export const HomeMessage = () => (

@@ -23,12 +23,6 @@ export const UserHomeInfoWrapper = styled.div`
         color:#BDBDBD;
     }
 
-    h4{
-        font-weight: 700;
-        color:#6A1B9A;
-        margin: 0.1em;
-    }
-    
     .alerts-container{
         flex:1;
 

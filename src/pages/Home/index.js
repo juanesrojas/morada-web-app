@@ -7,6 +7,7 @@ import { PropertyCard } from "./components/PropertyCard";
 import { Page } from "../../components/Page";
 
 
+
 const PropertyTypes = [
     {icon: FaBuilding, label:'Apartamentos'},
     {icon: FaHouseUser, label:'Casas'},
@@ -24,7 +25,8 @@ export const Home = () => (
     <>
         
         <Page>
-            <img style={{"justify-content":"center"}} src={require("./components/UserHomeInfo/images/Logo.JPG")}/>
+
+            
 
             <UserHomeInfo userName={"Juan Rojas"} userPicture={require("./components/UserHomeInfo/images/profile_picture.png")}/>
             <HomeMessage/>
@@ -33,7 +35,10 @@ export const Home = () => (
                     PropertyTypes.map(item => <PropertyTypeBtn icon={item.icon} label={item.label} /> )
                 }
             </PropertyTypesContainer>
+
             <PropertyCard/>
+            
+            
 
 
         </Page>

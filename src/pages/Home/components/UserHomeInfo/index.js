@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { UserHomeInfoWrapper } from "./styles";
 import { FaRegBell } from 'react-icons/fa';
-import { SubTitle } from "../../../../globalStyles";
+import { SubTitle,SecundaryText, Title } from "../../../../globalStyles";
 
 
 export const UserHomeInfo = ({userName,userPicture}) => (
@@ -9,8 +9,8 @@ export const UserHomeInfo = ({userName,userPicture}) => (
         <UserHomeInfoWrapper>  
             <div className="user-picture"> <img class="picture-box" src={userPicture}/> </div>    
             <div className="user-home-info">
-            <SubTitle>Hola!</SubTitle>
-                <h4>{userName}</h4>
+            <SecundaryText>Hola!</SecundaryText>
+                <SubTitle>{userName}</SubTitle>
             </div>
             <div className="alerts-container"><div class="alerts-bell"><FaRegBell/></div></div>
         </UserHomeInfoWrapper>
