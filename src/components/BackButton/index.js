@@ -6,10 +6,6 @@ import { Link } from "react-router-dom";
 
 
 
-
-
-
-
 export const BackButton = () => {
     const navigate = useNavigate();
     return(

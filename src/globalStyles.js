@@ -23,7 +23,7 @@ export const SubTitle = styled.h4`
         margin: 0.1em;
 `;
 
-export const SecundaryText = styled.p`
+export const SecondaryText = styled.p`
         font-weight: 300;
         color:#BDBDBD;
         font-size: 1.0em;
@@ -35,4 +35,34 @@ export const PrimaryText = styled.p`
         color:#212121;
         font-size: 1.0em;
         margin: 0.1em;
+`;
+
+export const FormControl = styled.div`
+        //width: 100%;
+        margin: 5px 0;
+        border-radius: 6px;
+        background-color: #f2f2f2;
+        padding: 5px 10px;
+        .input{
+                padding: 0px 10px;
+        }
+        label{
+                display: block;
+                font-size: 0.95em;
+                color: #222;
+                font-weight:500;
+        }
+
+        input[type="email"], input[type="password"]{ //aplica solo email y password
+                display:block;
+                width:100%;
+                font-size: 1.1em;
+                padding:5px 0px 5px 0px;
+                margin:0px;
+                background-color: transparent;
+                border:none;
+                outline: none;
+        }
+
+
 `;

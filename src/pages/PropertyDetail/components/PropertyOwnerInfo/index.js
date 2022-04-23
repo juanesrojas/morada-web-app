@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { PropertyOwnerInfoWrapper } from "./styles";
 import { FaRegCommentAlt,FaPhoneAlt } from 'react-icons/fa';
-import { SubTitle,SecundaryText, Title } from "../../../../globalStyles";
+import { SubTitle,SecondaryText, Title } from "../../../../globalStyles";
 
 
 export const PropertyOwnerInfo = ({userName,userPicture,PropertyID}) => (
@@ -9,7 +9,7 @@ export const PropertyOwnerInfo = ({userName,userPicture,PropertyID}) => (
         <PropertyOwnerInfoWrapper>  
             <div className="user-picture"> <img class="picture-box" src={userPicture}/> </div>    
             <div className="user-home-info">
-            <SecundaryText>Owner</SecundaryText>
+            <SecondaryText>Owner</SecondaryText>
                 <SubTitle>{userName}</SubTitle>
             </div>
             <div className="message-container"><div class="message-icon"><FaRegCommentAlt/></div></div>

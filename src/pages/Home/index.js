@@ -22,7 +22,7 @@ const PropertyTypes = [
 
 export const Home = () => (
 
-    <>
+
         
         <Page>
 
@@ -37,6 +37,9 @@ export const Home = () => (
             </PropertyTypesContainer>
 
             <PropertyCard/>
+            <PropertyCard/>
+            <PropertyCard/>
+            <PropertyCard/>
             
             
 
@@ -44,9 +47,6 @@ export const Home = () => (
         </Page>
         
 
-
-
-    </>
 
 
 )
