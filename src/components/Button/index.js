@@ -3,6 +3,7 @@ import { ButtonStyled, ButtonContainer,StyledLink } from "./styles";
 import { FaHome,FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { FormControl } from "../../globalStyles";
 
 
 export const Button = ({label,onPress, linkTo,icon}) => {
@@ -23,3 +24,5 @@ export const Button = ({label,onPress, linkTo,icon}) => {
 export const SquaredButton = ({icon:Icon,link,back,primaryColor,primaryBackgroundColor,hoverColor,hoverBackgroundColor})=> (  //si se requiere usar la propiedad back a través de navigate, no se incorpora el atributo link.
    <Link to={link} onClick={back}><ButtonContainer  style={{"--myPrimaryColor":primaryColor,"--myPrimaryBackgroundColor":primaryBackgroundColor,"--mySecondaryColor":hoverColor,"--mySecondaryBackgroundColor":hoverBackgroundColor}} ><Icon/></ButtonContainer></Link>
 );
+
+

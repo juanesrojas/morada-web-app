@@ -6,7 +6,7 @@ export const PropertyDetailContainer = styled.section`
 
     & > div{
         margin-top: 20px;
-        margin-left: 10px;
+        margin-left: 0px;
     }
 
 `;
