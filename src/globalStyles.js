@@ -43,9 +43,11 @@ export const FormControl = styled.div`
         border-radius: 6px;
         background-color: #f2f2f2;
         padding: 5px 10px;
+
         .input{
                 padding: 0px 10px;
         }
+
         label{
                 display: block;
                 font-size: 0.95em;
@@ -63,6 +65,24 @@ export const FormControl = styled.div`
                 border:none;
                 outline: none;
         }
+
+        .pswWrapper{
+                display:flex;
+
+                .pswContainer{
+                        flex:20;
+                }
+
+                .pswViewContainer{
+                        flex:1;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+
+                }
+        }
+
+
 
 
 `;

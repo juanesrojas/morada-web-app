@@ -26,18 +26,22 @@ export const Login =()=>{
 
 
                 <FormControl>
-                    <label>Contraseña</label>
-                    <div style={{"display":"flex"}}>
-                        <div class="input">
-                            {
-                            !visible ? (<input type="password"/>  )
-                                : (<input type="text"/>)
-                            }
-                            
-                        </div>         
-                        <SquaredButton icon={visible ? FaEyeSlash:FaEye} color={"#4A148C"}  link="" back={() =>{ setVisible((visible) => !visible)}}/>
-                    
-                    </div>
+                    <div class="pswWrapper">                       
+                        <div class="pswContainer" >
+                            <label>Contraseña</label>
+                            <div class="input">
+                                {
+                                !visible ? (<input type="password"/>  )
+                                    : (<input type="text"/>)
+                                }
+                                
+                            </div>               
+                        </div>
+                        <div class="pswViewContainer" style={{"flex":"1","display":"flex","align-items":"center","justify-content":"center"}}>
+                            <SquaredButton icon={!visible ? FaEyeSlash:FaEye} color={"#4A148C"}  link="" back={() =>{ setVisible((visible) => !visible)}}/>
+                        </div>
+                        
+                    </div>                   
                 </FormControl> 
                             
 

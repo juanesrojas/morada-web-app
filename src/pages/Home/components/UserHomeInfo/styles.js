@@ -25,6 +25,9 @@ export const UserHomeInfoWrapper = styled.div`
 
     .alerts-container{
         flex:1;
+        display:flex;
+        justify-content: center;
+        align-items: center;
 
     };
 
@@ -42,18 +45,22 @@ export const UserHomeInfoWrapper = styled.div`
     
 
     .user-picture{
-        flex:2;
+        flex:1;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
     };
 
     .user-home-info{
-        flex:10;
+        flex:20;
     }
 
     .picture-box{
      
         background-color:#F3E5F5;
         border-radius: 20px;
-        padding:0;
+        padding:auto;
         width: 70px;
         height: 60px;
     
