@@ -1,3 +1,4 @@
+import { ShortMenu } from "../../components/ShortMenu";
 import { Button } from "../../components/Button";
 import { Page } from "../../components/Page";
 import { PrimaryText, SecondaryText, SubTitle, Title } from "../../globalStyles";
@@ -32,6 +33,8 @@ export const Account =()=>{
     )
     return(
         <Page>
+            <ShortMenu/>
+
             <Title>   mi cuenta</Title>
             {
                 isAuth ? <UserInfo/> : <UserUnauthorized/>

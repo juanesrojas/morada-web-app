@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import { PropertyOwnerInfoWrapper } from "./styles";
 import { FaRegCommentAlt,FaPhoneAlt } from 'react-icons/fa';
 import { SubTitle,SecondaryText, Title } from "../../../../globalStyles";
+import { SquaredButton } from "../../../../components/Button";
 
 
 export const PropertyOwnerInfo = ({userName,userPicture,PropertyID}) => (
@@ -12,8 +13,8 @@ export const PropertyOwnerInfo = ({userName,userPicture,PropertyID}) => (
             <SecondaryText>Owner</SecondaryText>
                 <SubTitle>{userName}</SubTitle>
             </div>
-            <div className="message-container"><div class="message-icon"><FaRegCommentAlt/></div></div>
-            <div className="call-container"><div class="call-icon"><FaPhoneAlt/></div></div>
+            <div className="message-container"> <SquaredButton icon={FaRegCommentAlt} link="" /></div>
+            <div className="call-container"> <SquaredButton icon={FaPhoneAlt} link="" primaryColor={"white"} primaryBackgroundColor={"green"} hoverColor={"white"} hoverBackgroundColor={"red"}/>  </div>
         </PropertyOwnerInfoWrapper>
     </Fragment>
 )

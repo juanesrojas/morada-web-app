@@ -1,11 +1,11 @@
-import { BackButton } from "../../components/BackButton";
+import { ShortMenu } from "../../components/ShortMenu";
 import { Button } from "../../components/Button";
 import { Page } from "../../components/Page";
 import { FormControl, PrimaryText, Title } from "../../globalStyles";
 
 export const Login =()=>(
     <Page hideMenu>
-        <BackButton/>
+        <ShortMenu/>
         <Title>Iniciar Sesión</Title>
         <br/>
         <form>

@@ -13,7 +13,7 @@ export const PropertyOwnerInfoWrapper = styled.div`
     div{
         margin:0px 2px;
         padding:0px;
-        background-color:white;
+        //background-color:white;
     };
 
 

@@ -30,49 +30,29 @@ export const StyledLink = styled(Link)`
       display:block;
 `;
 
-export const ButtonWrapper = styled.div`
-    border: 1px;
-    background-color:white;
-    border-radius: 10px;
-    align-items: center;
-    //width:100%;
-    margin:0px 0px;
-    padding:0px;
+export const ButtonContainer = styled.div`
+
+   //--defaultColor:#4A148C;
     display:flex;
+    width: 40px;
+    height: 40px;
+    border:1px solid var(--myPrimaryColor, #4A148C); 
+    background-color: var(--myPrimaryBackgroundColor, white);
+    border-radius: 15px;
+    padding:0;
+    color:var(--myPrimaryColor, #4A148C);
+    justify-content: center;
+    align-items: center;
 
-    div{
-        margin:0px 2px;
-        padding:0px;
-        background-color:white;
-    };
-
-
-
-    .home-container{
-        flex:1;
-
-    };
-
-    .home-icon{
-        display:flex;
-        width: 40px;
-        height: 40px;
-        border:1px solid #4A148C;
-        border-radius: 15px;
-        padding:0;
-        color:#4A148C;
-        justify-content: center;
-        align-items: center;
-
-        &:hover{
-            background-color:#4A148C;
-            cursor:pointer;      
-            p{ color:white;}
-            svg{
-                color:white;
-            };   
-        };     
-    };
+    &:hover{
+        background-color:var(--mySecondaryBackgroundColor, #4A148C);
+        cursor:pointer;      
+        p{ color:var(--mySecondaryColor, white);}
+        svg{
+            color:var(--mySecondaryColor, white);
+        };   
+    };     
+    
    
 
 `
