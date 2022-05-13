@@ -1,4 +1,5 @@
 import styled,{createGlobalStyle} from "styled-components";
+import { MENU_HEIGHT } from "./constants/styleConstants";
 
 export const GlobalStyle = createGlobalStyle`
     body{
@@ -6,6 +7,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0px;
         font-family: "Lato";
 
+    }
+        //sirve ára que los elementos queden totalmente contenidos dentro del contenedor padre
+    *, ::after, ::before{
+         box-sizing: border-box;
     }
 `;
 
@@ -38,7 +43,7 @@ export const PrimaryText = styled.p`
 `;
 
 export const FormControl = styled.div`
-        //width: 100%;
+        width: 100%;
         margin: 5px 0;
         border-radius: 6px;
         background-color: #f2f2f2;
@@ -55,7 +60,7 @@ export const FormControl = styled.div`
                 font-weight:500;
         }
 
-        input[type="email"], input[type="password"], input[type="text"], input[type="tel"]{ //aplica solo email y password
+        input[type="email"], input[type="password"], input[type="text"], input[type="tel"],input[type="number"], textarea, select{ //
                 display:block;
                 width:100%;
                 font-size: 1.1em;
@@ -85,4 +90,12 @@ export const FormControl = styled.div`
 
 
 
+`;
+
+export const FixedFooter = styled.footer`
+        position: fixed;
+        bottom:${MENU_HEIGHT+5}px;
+        position: fixed;
+        left:0;
+        width:100%;
 `;

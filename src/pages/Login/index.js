@@ -1,19 +1,26 @@
+import {useState} from "react"; //Recomendación usar los hooks al comienzo
 import { ShortMenu } from "../../components/ShortMenu";
 import { Button, SquaredButton } from "../../components/Button";
 import { Page } from "../../components/Page";
 import { FormControl, PrimaryText, Title } from "../../globalStyles";
-import {useState} from "react";
+
 
 import { FaEye,FaEyeSlash} from 'react-icons/fa';
 
 export const Login =()=>{
     const [visible, setVisible] = useState(false);
+  
+    const tooglePasswordVisible = () =>{
+        //setVisible((visible) => !visible);
+        setVisible(!visible);
+        console.log(visible);
+    };
 
     return (
 
         <Page hideMenu>
             <ShortMenu/>
-            <Title>Iniciar Sesión</Title>
+            <Title>Iniciar Sesión </Title>
             <br/>
             <form>
 
@@ -30,15 +37,11 @@ export const Login =()=>{
                         <div class="pswContainer" >
                             <label>Contraseña</label>
                             <div class="input">
-                                {
-                                !visible ? (<input type="password"/>  )
-                                    : (<input type="text"/>)
-                                }
-                                
+                                <input type={!visible ? "password": "text"} />
                             </div>               
                         </div>
                         <div class="pswViewContainer" style={{"flex":"1","display":"flex","align-items":"center","justify-content":"center"}}>
-                            <SquaredButton icon={!visible ? FaEyeSlash:FaEye} color={"#4A148C"}  link="" back={() =>{ setVisible((visible) => !visible)}}/>
+                            <SquaredButton icon={!visible ? FaEyeSlash:FaEye} color={"#4A148C"}  link="" funct={tooglePasswordVisible}/>
                         </div>
                         
                     </div>                   

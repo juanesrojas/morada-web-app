@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import styled, {css} from 'styled-components';
+import { PRIMARY_COLOR } from '../../constants/styleConstants';
 
 const baseStyles = css`
     //width: 100%;
     font-size: 1em;
     color: white;
-    background-color: #4A148C;
+    background-color: ${PRIMARY_COLOR};
     text-align: center;
     border:none;
     border-radius:6px;
@@ -36,16 +37,16 @@ export const ButtonContainer = styled.div`
     display:flex;
     width: 40px;
     height: 40px;
-    border:1px solid var(--myPrimaryColor, #4A148C); 
+    border:1px solid var(--myPrimaryColor, ${PRIMARY_COLOR}); 
     background-color: var(--myPrimaryBackgroundColor, white);
     border-radius: 15px;
     padding:0;
-    color:var(--myPrimaryColor, #4A148C);
+    color:var(--myPrimaryColor, ${PRIMARY_COLOR});
     justify-content: center;
     align-items: center;
 
     &:hover{
-        background-color:var(--mySecondaryBackgroundColor, #4A148C);
+        background-color:var(--mySecondaryBackgroundColor, ${PRIMARY_COLOR});
         cursor:pointer;      
         p{ color:var(--mySecondaryColor, white);}
         svg{

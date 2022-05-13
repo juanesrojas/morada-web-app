@@ -21,8 +21,8 @@ export const Button = ({label,onPress, linkTo,icon}) => {
 }
 
 
-export const SquaredButton = ({icon:Icon,link,back,primaryColor,primaryBackgroundColor,hoverColor,hoverBackgroundColor})=> (  //si se requiere usar la propiedad back a través de navigate, no se incorpora el atributo link.
-   <Link to={link} onClick={back}><ButtonContainer  style={{"--myPrimaryColor":primaryColor,"--myPrimaryBackgroundColor":primaryBackgroundColor,"--mySecondaryColor":hoverColor,"--mySecondaryBackgroundColor":hoverBackgroundColor}} ><Icon/></ButtonContainer></Link>
+export const SquaredButton = ({icon:Icon,link,funct,primaryColor,primaryBackgroundColor,hoverColor,hoverBackgroundColor})=> (  //si se requiere usar la propiedad back a través de navigate, no se incorpora el atributo link.
+   <Link to={link} onClick={funct}><ButtonContainer  style={{"--myPrimaryColor":primaryColor,"--myPrimaryBackgroundColor":primaryBackgroundColor,"--mySecondaryColor":hoverColor,"--mySecondaryBackgroundColor":hoverBackgroundColor}} ><Icon/></ButtonContainer></Link>
 );
 
 

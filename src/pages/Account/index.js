@@ -1,7 +1,7 @@
 import { ShortMenu } from "../../components/ShortMenu";
 import { Button } from "../../components/Button";
 import { Page } from "../../components/Page";
-import { PrimaryText, SecondaryText, SubTitle, Title } from "../../globalStyles";
+import { PrimaryText, SecondaryText, SubTitle, Title, FixedFooter } from "../../globalStyles";
 
 export const Account =()=>{
 
@@ -13,10 +13,14 @@ export const Account =()=>{
             <PrimaryText>11222254</PrimaryText>
             <SecondaryText>juan@mail.com</SecondaryText>
             <hr/>
-            <Button 
-                label="Cerrar Sesión" 
-                onPress={()=>{alert('cerrar sesión')}}
-            />
+            <FixedFooter>
+                <Button 
+                    label="Cerrar Sesión" 
+                    onPress={()=>{alert('cerrar sesión')}}
+                />
+            </FixedFooter>
+
+
         </div>
     )
 

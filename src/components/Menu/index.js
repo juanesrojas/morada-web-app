@@ -1,9 +1,9 @@
-import { FaHome,FaUserAlt,FaStar } from 'react-icons/fa';
+import { FaHome,FaUserAlt,FaStar,FaPlusSquare,FaBuilding } from 'react-icons/fa';
 import { MenuItem } from './MenuItem';
 import { MenuWrapper } from './styles';
 
 
-const MenuItems = [
+const CustomerMenuItems = [
     {
         icon: FaHome,
         label: 'Inicio',
@@ -24,13 +24,47 @@ const MenuItems = [
 
 ];
 
+const PropertiesAdminMenuItems = [
+    {
+        icon: FaHome,
+        label: 'Inicio',
+        path: '/'
+    },
 
-export const Menu = () =>(
-    <MenuWrapper>
-        {
-            MenuItems.map(item=><MenuItem {...item} />)
-        }
+    {
+        icon: FaPlusSquare,
+        label: 'Agregar',
+        path: '/add-property'
+    },
 
-    </MenuWrapper>
+    {
+        icon: FaBuilding,
+        label: 'Mis Propiedades',
+        path: '/my-properties'
+    },
 
-);
+    {
+        icon: FaUserAlt,
+        label: 'perfil',
+        path: '/account'
+    }
+
+];
+
+
+
+export const Menu = () =>{
+const typeProfile = 2;    
+    return(
+        <MenuWrapper>
+            {
+                typeProfile ===1 && CustomerMenuItems.map(item=><MenuItem {...item} />)
+            }
+            {
+                typeProfile ===2 && PropertiesAdminMenuItems.map(item=><MenuItem {...item} />)
+            }
+
+        </MenuWrapper>
+
+    );
+}

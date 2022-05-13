@@ -52,15 +52,12 @@ export const Signup =()=>{
                         <div class="pswContainer" >
                             <label>Contraseña</label>
                             <div class="input">
-                                {
-                                !visible ? (<input type="password"/>  )
-                                    : (<input type="text"/>)
-                                }
+                                <input type={!visible ? "password": "text"} />
                                 
                             </div>               
                         </div>
                         <div class="pswViewContainer" style={{"flex":"1","display":"flex","align-items":"center","justify-content":"center"}}>
-                            <SquaredButton icon={!visible ? FaEyeSlash:FaEye} color={"#4A148C"}  link="" back={() =>{ setVisible((visible) => !visible)}}/>
+                            <SquaredButton icon={!visible ? FaEyeSlash:FaEye} color={"#4A148C"}  link="" funct={() =>{ setVisible((visible) => !visible)}}/>
                         </div>
                         
                     </div>                   

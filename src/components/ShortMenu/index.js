@@ -14,7 +14,7 @@ export const ShortMenu = () => {
             <BackButtonWrapper>  
                 <div className="icon-container"> <SquaredButton icon={FaHome} link="/" primaryColor={"#4A148C"} primaryBackgroundColor={"white"} hoverColor={"white"} hoverBackgroundColor={"#4A148C"}/>  </div>
                 <div className="middle-space"></div>
-                <div className="icon-container"> <SquaredButton icon={FaArrowLeft} link=""  back={() => navigate(-1)}/>   </div>
+                <div className="icon-container"> <SquaredButton icon={FaArrowLeft} link=""  funct={() => navigate(-1)}/>   </div>
              </BackButtonWrapper>
         </Fragment>
     );

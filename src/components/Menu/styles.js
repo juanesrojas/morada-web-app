@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { MENU_HEIGHT,PRIMARY_COLOR } from '../../constants/styleConstants';
 
 
 export const MenuWrapper = styled.div`
     border: 2px;
     background-color:#F3E5F5;
     width: 100%;
-    height: 80px;
+    height: ${MENU_HEIGHT}px;
     position: fixed;
     bottom: 0;
     left:0;
@@ -19,7 +20,7 @@ export const MenuWrapper = styled.div`
     }
 
     a:hover{
-        background-color: #4A148C;
+        background-color: ${PRIMARY_COLOR};
         svg{color:white;}
         p{color:white;}
     }
@@ -40,13 +41,13 @@ export const MenuItemWrapper = styled.section`
     display:flex;
     svg{
         font-size:1.5em;
-        color:#4A148C;
+        color:${PRIMARY_COLOR};
         font-weight: 700;
         margin:px;
 
     }  
     p{
-        color:#4A148C;
+        color:${PRIMARY_COLOR};
         font-size: 0.8em;
         font-weight: 700;
         margin:5px;

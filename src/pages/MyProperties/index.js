@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { PropertyTypeBtn } from "./components/PropertyTypeBtn";
-import { UserHomeInfo } from "./components/UserHomeInfo";
-import { PropertyTypesContainer } from "./styles";
+import { PropertyTypeBtn } from "../Home/components/PropertyTypeBtn";
+import { UserHomeInfo } from "../Home/components/UserHomeInfo";
+import { PropertyTypesContainer } from "../Home/styles";
 import { FaBuilding,FaIndustry,FaHouseUser,FaWarehouse,  FaTree,  FaTractor } from 'react-icons/fa';
-import { HomeMessage } from "./components/MessageBox";
-import { PropertyCard } from "./components/PropertyCard";
+import { HomeMessage } from "../Home/components/MessageBox";
+import { PropertyCard } from "../Home/components/PropertyCard";
 import { Page } from "../../components/Page";
 
 
@@ -22,7 +22,7 @@ export const PropertyTypes = [
 
 
 
-export const Home = () => {
+export const MyProperties = () => {
 
     const [selectedPropertyType, setSelectedProperty] = useState(0);
 
@@ -42,8 +42,7 @@ export const Home = () => {
 
             
 
-            <UserHomeInfo userName={"Juan Rojas"} userPicture={require("./components/UserHomeInfo/images/profile_picture.png")}/>
-            <HomeMessage/>
+            <UserHomeInfo userName={"Juan Rojas"} userPicture={require("../Home/components/UserHomeInfo/images/profile_picture.png")}/>
             <PropertyTypesContainer>
                 
                 {//código jsx
