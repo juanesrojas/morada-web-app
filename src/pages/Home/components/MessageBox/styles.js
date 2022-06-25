@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { PRIMARY_COLOR } from '../../../../constants/styleConstants';
 
 export const HomeMessageBox = styled.div`
     border: 1px;
@@ -9,7 +10,7 @@ export const HomeMessageBox = styled.div`
     margin:10px 0px;
     padding:10px;
     span {
-        color: #4A148C;
+        color: ${PRIMARY_COLOR};
     };
 
     p {

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PRIMARY_COLOR } from "../../constants/styleConstants";
 
 export const PropertyTypesContainer = styled.section`
     display: flex;
@@ -27,7 +28,7 @@ export const PropertyTypesContainer = styled.section`
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-        background: #4A148C; 
+        background: ${PRIMARY_COLOR}; 
         }
     };
     /**********  Fin Scrolbar ****************/   

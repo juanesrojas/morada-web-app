@@ -1,8 +1,12 @@
 import styled from 'styled-components';
+import { PRIMARY_COLOR } from '../../../../constants/styleConstants';
 
 export const PropertyTypeBtnWrapper = styled.div`
     border: 1px;
-    background-color:#F3E5F5;
+    //background-color:#F3E5F5;
+    background-color:${props => props.selected ? PRIMARY_COLOR : '#F3E5F5'};
+
+    
     border-radius: 10px;
     min-width: 100px;
     margin:10px 5px;
@@ -12,7 +16,7 @@ export const PropertyTypeBtnWrapper = styled.div`
     align-items: center;
 
     p{
-        color:#4A148C;
+        color:${props => props.selected ? '#F3E5F5' :  PRIMARY_COLOR };
         font-size: 0.8em;
         font-weight: 700;
         margin:0px;
@@ -27,11 +31,11 @@ export const PropertyTypeBtnWrapper = styled.div`
     };
 
     &:hover{
-        background-color:#4A148C;
+        background-color:${PRIMARY_COLOR};
         cursor:pointer;      
-        p{ color:white;}
+        p{ color:#F3E5F5;}
         svg{
-            color:white;
+            color:#F3E5F5;
         }        
     };       
 `;
@@ -39,7 +43,7 @@ export const PropertyTypeBtnWrapper = styled.div`
 export const IconWrapper = styled.div`
     svg{
         font-size:2.8em;
-        color:#4A148C;
+        color:${props => props.selected ? '#F3E5F5' :  PRIMARY_COLOR };
         font-weight: 700;
         margin:0px;
     }    

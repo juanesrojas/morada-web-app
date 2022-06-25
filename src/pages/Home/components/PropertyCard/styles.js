@@ -19,6 +19,8 @@ export const PropertyCardWrapper = styled.div`
     
     a {
         text-decoration:none;
+        display:flex;
+
     }
 
 `;

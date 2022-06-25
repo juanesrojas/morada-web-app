@@ -1,15 +1,21 @@
+import { Fragment } from "react"
+import { Menu } from "../Menu"
 import { PageWrapper } from "./styles"
 
 
 export const Page =(props)=>(
-    <PageWrapper>
-        <div style={{"display":"flex"}}>
-            <img style={{"margin":"auto"}} src={require("./images/Logo.JPG")}/>
+    <Fragment>
+        <PageWrapper>
+            <div style={{"display":"flex"}}>
+                <img style={{"margin":"auto"}} src={require("./images/Logo.JPG")}/>
 
-        </div>
+            </div>
+            {props.children}
+        </PageWrapper>
+        {
+            !props.hideMenu && <Menu/>
+        }
 
-        {props.children}
-
-    </PageWrapper>
-
+    </Fragment>
+    
 )

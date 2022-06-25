@@ -1,4 +1,5 @@
 import styled,{createGlobalStyle} from "styled-components";
+import { MENU_HEIGHT } from "./constants/styleConstants";
 
 export const GlobalStyle = createGlobalStyle`
     body{
@@ -6,6 +7,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0px;
         font-family: "Lato";
 
+    }
+        //sirve ára que los elementos queden totalmente contenidos dentro del contenedor padre
+    *, ::after, ::before{
+         box-sizing: border-box;
     }
 `;
 
@@ -23,7 +28,7 @@ export const SubTitle = styled.h4`
         margin: 0.1em;
 `;
 
-export const SecundaryText = styled.p`
+export const SecondaryText = styled.p`
         font-weight: 300;
         color:#BDBDBD;
         font-size: 1.0em;
@@ -35,4 +40,67 @@ export const PrimaryText = styled.p`
         color:#212121;
         font-size: 1.0em;
         margin: 0.1em;
+`;
+
+export const FormControl = styled.div`
+        width: 100%;
+        margin: 5px 0;
+        border-radius: 6px;
+        background-color: #f2f2f2;
+        padding: 5px 10px;
+
+        .input{
+                padding: 0px 10px;
+        }
+
+        label{
+                display: block;
+                font-size: 0.95em;
+                color: #222;
+                font-weight:500;
+        }
+
+        input[type="email"], input[type="password"], input[type="text"], input[type="tel"],input[type="number"], textarea, select{ //
+                display:block;
+                width:100%;
+                font-size: 1.1em;
+                padding:5px 0px 5px 0px;
+                margin:0px;
+                background-color: transparent;
+                border:none;
+                outline: none;
+        }
+
+        span {
+                color:red;
+                font-size: 0.85em
+        }
+
+        .pswWrapper{
+                display:flex;
+
+                .pswContainer{
+                        flex:20;
+                }
+
+                .pswViewContainer{
+                        flex:1;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+
+                }
+        }
+
+
+
+
+`;
+
+export const FixedFooter = styled.footer`
+        position: fixed;
+        bottom:${MENU_HEIGHT+5}px;
+        position: fixed;
+        left:0;
+        width:100%;
 `;

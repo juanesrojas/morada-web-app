@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { PRIMARY_COLOR } from '../../constants/styleConstants';
 
 export const PropertyTypeLabelWrapper = styled.div`
-    background-color:#4A148C;
+    background-color:${PRIMARY_COLOR};
     border-radius: 25px;
     padding: 2px 3px;
     margin: 5px 2px;

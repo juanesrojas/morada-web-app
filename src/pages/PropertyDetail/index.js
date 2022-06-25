@@ -1,4 +1,4 @@
-import { BackButton } from "../../components/BackButton";
+import { ShortMenu } from "../../components/ShortMenu";
 import { Page } from "../../components/Page";
 import { PropertyInfoCard } from "../../components/PropertyInfoCard";
 import { PrimaryText, SubTitle } from "../../globalStyles";
@@ -14,7 +14,7 @@ export const PropertyDetail = (PropertyID) =>(
 
         <Page>
             <PropertyDetailContainer>
-                <BackButton/>
+                <ShortMenu/>
                 <PropertyImageScrolling/>
                 <PropertyInfoCard/>
                 <div>
