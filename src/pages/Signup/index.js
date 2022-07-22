@@ -49,6 +49,7 @@ export const Signup =()=>{
             showAlert('Felicitaciones',"Usuario registrado", SW_ICON.SUCCESS,()=>{navigate('/login')});
         }catch (error){
             console.log('error',error);
+            showAlert('Ups, un error ha ocurrido',error.response.data, SW_ICON.ERROR);
         }
     }
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import { PropertyTypeBtn } from "../Home/components/PropertyTypeBtn";
 import { UserHomeInfo } from "../Home/components/UserHomeInfo";
 import { PropertyTypesContainer } from "../Home/styles";
@@ -6,8 +6,13 @@ import { FaBuilding,FaIndustry,FaHouseUser,FaWarehouse,  FaTree,  FaTractor } fr
 import { HomeMessage } from "../Home/components/MessageBox";
 import { PropertyCard } from "../Home/components/PropertyCard";
 import { Page } from "../../components/Page";
+import { SampleContext } from "../../contexts/SampleContext";
+import { UserContext } from "../../contexts/UserContext";
+import { HTTP_VERBS, requestHttp } from "../../utils/HttpRequest";
+import { useLocation } from "react-router-dom";
 
 
+const ALL_PROPERTIES_TYPES = 0;
 
 
 export const PropertyTypes = [
@@ -24,17 +29,73 @@ export const PropertyTypes = [
 
 export const MyProperties = () => {
 
-    const [selectedPropertyType, setSelectedProperty] = useState(0);
+    const [selectedPropertyType, setSelectedProperty] = useState(ALL_PROPERTIES_TYPES);
+    const {user,setUser} = useContext(UserContext);
+    const [properties, setProperties] = useState([]);
 
-    const propertyTypeHandler = (propID) =>{
-        setSelectedProperty(propID);
+
+    const propertyTypeHandler = (propTypeID) =>{
+       //(selectedPropertyType === propTypeID) ? setSelectedProperty(ALL_PROPERTIES_TYPES) : setSelectedProperty(propTypeID);
+       setSelectedProperty(selectedPropertyType === propTypeID ? ALL_PROPERTIES_TYPES:propTypeID);
+
 
     };
 
     useEffect(()=>{
         //acciones a ejecutar
-        console.log('se modificó el tipo de propiedad al id ' + selectedPropertyType);
-    }, [selectedPropertyType])
+        console.log('validando propiedades...');
+        propertiesRequest();    
+
+    }, [selectedPropertyType]);
+
+
+/*
+    useEffect(()=>{
+
+        async function makePropertiesRequest() {
+          
+            console.log('validando propiedades...');
+
+            setProperties(await propertiesRequest());
+            console.log('propiedades encontradas 123:',propiedades);
+
+        }
+        makePropertiesRequest();
+
+    }, []) */
+
+    const propertiesRequest = async () =>{
+            
+        try{ 
+            
+            const response = await requestHttp(
+                {
+                    method:HTTP_VERBS.GET,
+                    endpoint:'/properties',
+                    params:makePropertiesFilter()
+                }
+            );
+           // const {checkProperties} = response.data;
+            setProperties(response.data.checkProperties);
+            console.log('propiedades encontradas aquí:',properties);
+
+
+
+        }catch (error){
+            console.log('error',error);           
+        }
+    }
+
+    const makePropertiesFilter = () =>{
+        const filters = {};    
+        if(selectedPropertyType!==ALL_PROPERTIES_TYPES){
+            filters['propertyType']=selectedPropertyType
+        };
+        filters['ownerId']="62abf81c4785b2acb310a03b";
+        console.log('filter', filters);
+        return filters;
+    }
+    
 
     return(
 
@@ -42,28 +103,43 @@ export const MyProperties = () => {
 
             
 
-            <UserHomeInfo userName={"Juan Rojas"} userPicture={require("../Home/components/UserHomeInfo/images/profile_picture.png")}/>
+            <UserHomeInfo userName={user.name} userPicture={require("../Home/components/UserHomeInfo/images/profile_picture.png")}/>
+            <HomeMessage/>
+
             <PropertyTypesContainer>
                 
                 {//código jsx
-                    PropertyTypes.map(item => 
+                    PropertyTypes.map((item,key) => 
                         <PropertyTypeBtn 
                             icon={item.icon} 
                             label={item.label} 
                             id={item.id}
                             selected ={selectedPropertyType === item.id} 
                             onPress={ propertyTypeHandler} 
+                            key={key}
                         /> )
+                        
                 }
+
+
+
             </PropertyTypesContainer>
+                <div>
+                    {            console.log('propiedadesa pintar:',properties)}
+                    {
+                       properties.map((item,key) => //key viene como una propiedad del mapeo, no usarle puede arrojar alertas
+                           
+                            <PropertyCard {...item}/>)
+                    }
 
-            <PropertyCard/>
-            <PropertyCard/>
-            <PropertyCard/>
-            <PropertyCard/>
+    
+
+                </div>
+
+
+
             
             
-
 
         </Page>
         

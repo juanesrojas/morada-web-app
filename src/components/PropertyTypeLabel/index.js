@@ -1,13 +1,15 @@
+import { PropertyTypes } from "../../pages/Home";
 import { PropertyTypeLabelWrapper } from "./styles";
+import { FaBuilding } from 'react-icons/fa';
 
 
 
-export const PropertyTypeLabel = ({icon:Icon,typeId}) =>(
+export const PropertyTypeLabel = ({icon:Icon,type}) =>(
     <PropertyTypeLabelWrapper>
         <div>
             <Icon/>
             <p>
-                {typeId}
+                {type}
             </p>
         </div>
     </PropertyTypeLabelWrapper>

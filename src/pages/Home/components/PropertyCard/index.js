@@ -2,17 +2,18 @@
 import { PropertyInfoCard } from "../../../../components/PropertyInfoCard";
 import { PropertyCardWrapper, PropertyImageWrapper } from "./styles";
 import { Link } from "react-router-dom";
+import { getStaticImage } from "../../../../utils/StaticImage";
 
 
 
-export const PropertyCard = () =>(
+export const PropertyCard = (property) =>(
 
         <PropertyCardWrapper>
-            <Link to="/propertydetail">
+            <Link to={`/properties/${property._id}`}>
                 <PropertyImageWrapper>
-                    <img alt="apartamento" src="https://images.ctfassets.net/8lc7xdlkm4kt/5XZ6f7kcqu0cVgTnFoFnLt/52ac8951ab8edd991e28b383a6eac830/61M2.jpg"/>
+                    <img alt="foto propiedad" src={getStaticImage(property.mainImage)}/>
                 </PropertyImageWrapper>
-            <PropertyInfoCard/>
+                <PropertyInfoCard {...property}/>
             </Link>
         </PropertyCardWrapper>
 

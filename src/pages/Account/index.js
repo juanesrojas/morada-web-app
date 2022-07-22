@@ -2,16 +2,19 @@ import { ShortMenu } from "../../components/ShortMenu";
 import { Button } from "../../components/Button";
 import { Page } from "../../components/Page";
 import { PrimaryText, SecondaryText, SubTitle, Title, FixedFooter } from "../../globalStyles";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 export const Account =()=>{
 
-    const isAuth = false;
+    const {user, setUser} = useContext(UserContext);
+
 
     const UserInfo = () =>(
         <div>
-            <SubTitle>Juan Rojas</SubTitle>
-            <PrimaryText>11222254</PrimaryText>
-            <SecondaryText>juan@mail.com</SecondaryText>
+            <SubTitle>{user.name}</SubTitle>
+            <PrimaryText>{user.phone}</PrimaryText>
+            <SecondaryText>{user.email}</SecondaryText>
             <hr/>
             <FixedFooter>
                 <Button 
@@ -41,7 +44,7 @@ export const Account =()=>{
 
             <Title>   mi cuenta</Title>
             {
-                isAuth ? <UserInfo/> : <UserUnauthorized/>
+                user.isAuthenticated ? <UserInfo/> : <UserUnauthorized/>
             }
 
         </Page>

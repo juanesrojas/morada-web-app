@@ -8,7 +8,7 @@ import { SquaredButton } from "../../../../components/Button";
 export const PropertyOwnerInfo = ({userName,userPicture,PropertyID}) => (
     <Fragment>
         <PropertyOwnerInfoWrapper>  
-            <div className="user-picture"> <img class="picture-box" src={userPicture}/> </div>    
+            <div className="user-picture"> <img className="picture-box" src={userPicture}/> </div>    
             <div className="user-home-info">
             <SecondaryText>Owner</SecondaryText>
                 <SubTitle>{userName}</SubTitle>

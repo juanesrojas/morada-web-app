@@ -1,4 +1,4 @@
-import {useState} from "react"; //Recomendación usar los hooks al comienzo
+import {useContext, useEffect, useState} from "react"; //Recomendación usar los hooks al comienzo
 import { ShortMenu } from "../../components/ShortMenu";
 import { Button, SquaredButton } from "../../components/Button";
 import { Page } from "../../components/Page";
@@ -6,16 +6,31 @@ import { FormControl, PrimaryText, Title } from "../../globalStyles";
 
 
 import { FaEye,FaEyeSlash} from 'react-icons/fa';
-import { requestHttp } from "../../utils/HttpRequest";
+import { HTTP_VERBS, requestHttp } from "../../utils/HttpRequest";
 
 import { useForm } from "react-hook-form"; //Hook 
 import { showAlert , SW_ICON} from "../../utils/SwAlert";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { getToken, setToken } from "../../utils/TokenLS";
+import { UserContext } from "../../contexts/UserContext";
  
+import axios from "axios";
 
 
 export const Login =()=>{
+
     const [visible, setVisible] = useState(false);
+
+
+
+
+
+
+
+
+
+
+
     const navigate = useNavigate();
     const {
         register, 
@@ -29,9 +44,13 @@ export const Login =()=>{
     };
 
     const onSubmitLogin = (data) => {
-        console.log('data', data);
+       
         loginRequest(data);
-    }
+
+
+ 
+
+    };
 
     const loginRequest = async (data) =>{
         try{
@@ -43,15 +62,25 @@ export const Login =()=>{
             );
 
             console.log(response);
+
+            const {data: dataResponse}=response;
+            setToken(dataResponse.token);
+            console.log('token.',getToken());
+
+        
+
+   
+
+
             showAlert('Bienvenido',"Validación correcta", SW_ICON.SUCCESS,()=>{navigate('/')});
         }catch (error){
             console.log('error',error);
             showAlert('Error',"Credenciales incorrectas", SW_ICON.ERROR);
         }
-    }
+    };
 
     
-
+   
     return (
 
         <Page hideMenu>
