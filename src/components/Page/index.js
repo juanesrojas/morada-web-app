@@ -11,9 +11,10 @@ export const Page =(props)=>(
 
             </div>
             {props.children}
+           
         </PageWrapper>
         {
-            !props.hideMenu && <Menu/>
+            !props.hideMenu && <Menu userProfile={props.userProfile}/>
         }
 
     </Fragment>

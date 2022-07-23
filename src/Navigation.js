@@ -40,6 +40,7 @@ export const Navigation= () =>{
         if (token && !user.isAuthenticated) {
             //autologin: obtener los datos del usuario
             requestGetUserInfo(token);
+
         }
     };
 
@@ -59,6 +60,7 @@ export const Navigation= () =>{
                 email:data.user.email,
                 isAuthenticated:true
             });
+
         } catch (error){
             console.log("error", error)
         }

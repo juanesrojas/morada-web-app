@@ -8,7 +8,8 @@ import { PropertyOwnerInfo } from "./components/PropertyOwnerInfo";
 import { PropertyDetailContainer } from "./styles";
 import { useParams } from "react-router-dom";
 import { HTTP_VERBS, requestHttp } from "../../utils/HttpRequest";
-
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 
 
@@ -16,6 +17,8 @@ export const PropertyDetail = () =>{
 
     const {propertyId} = useParams();
     const [property, setProperty] = useState({title:"",propertyType:{id:0, label:"null"},businessType:{id:0, label:"null"}});
+    //const [property, setProperty] = useState({});
+    const {user, setUser} = useContext(UserContext);
     
     useEffect(()=>{
         //acciones a ejecutar
@@ -48,10 +51,10 @@ export const PropertyDetail = () =>{
     
     return (
 
-        <Page>
+        <Page userProfile={user.role}>
             <PropertyDetailContainer>
                 <ShortMenu/>
-                <PropertyImageScrolling/>
+                <PropertyImageScrolling image={property.mainImage}/>
                 <PropertyInfoCard {...property}/>
   
                 <div>
@@ -61,8 +64,10 @@ export const PropertyDetail = () =>{
  
                     
                 </div>
-  
-                <PropertyOwnerInfo  userName={"Juan Rojas"} userPicture={require("./components/PropertyOwnerInfo/images/profile_picture.png")} />
+                {   user.isAuthenticated?
+                    <PropertyOwnerInfo  userName={"Juan Rojas"} userPicture={require("./components/PropertyOwnerInfo/images/profile_picture.png")} /> :<p>Inicia sesión para ponerte en contacto con el propietario, has click <a href="/login">aquí</a></p>
+                }
+                
             </PropertyDetailContainer>
             
         </Page>

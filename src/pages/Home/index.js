@@ -25,12 +25,12 @@ export const PropertyTypes = [
 ];
 
 
-
 export const Home = () => {
 
     const [selectedPropertyType, setSelectedProperty] = useState(ALL_PROPERTIES_TYPES);
     const {user,setUser} = useContext(UserContext);
     const [properties, setProperties] = useState([]);
+ 
 
 
     const propertyTypeHandler = (propTypeID) =>{
@@ -97,11 +97,12 @@ export const Home = () => {
 
     return(
 
-        <Page>
+        <Page userProfile={user.role}>
 
             
 
             <UserHomeInfo userName={user.name} userPicture={require("./components/UserHomeInfo/images/profile_picture.png")}/>
+
             <HomeMessage/>
 
             <PropertyTypesContainer>
@@ -118,16 +119,14 @@ export const Home = () => {
                         /> )
                         
                 }
-
-
-
             </PropertyTypesContainer>
                 <div>
-                    {            console.log('propiedadesa pintar:',properties)}
+
                     {
                        properties.map((item,key) => //key viene como una propiedad del mapeo, no usarle puede arrojar alertas
                            
                             <PropertyCard {...item}/>)
+                            
                     }
 
     

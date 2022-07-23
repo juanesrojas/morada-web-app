@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 
-const initialState = {
-    role:0,
-    name: 'xxx',
+export const initialState = {
+    role:1,
+    name: 'visitante',
     phone: '',
     identification: '',
     isAuthenticated: false

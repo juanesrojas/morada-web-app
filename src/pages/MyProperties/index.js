@@ -99,7 +99,7 @@ export const MyProperties = () => {
 
     return(
 
-        <Page>
+        <Page userProfile={user.role}>
 
             
 

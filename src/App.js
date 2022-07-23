@@ -10,7 +10,7 @@ import { PropertyTypeBtn } from "./pages/Home/components/PropertyTypeBtn";
 // Home as Home2 se usa si existen varios componentes con el mismo nombre y los voy a invocar en este componente.
 export const App=()=> (
     <BrowserRouter>
-        <SampleContext.Provider value="Juan Rojas">
+        <SampleContext.Provider value="visitante">
             <UserContextStore>
                 <GlobalStyle/>
                 <Navigation/>
