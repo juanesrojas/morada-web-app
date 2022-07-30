@@ -45,7 +45,7 @@ export const Account =()=>{
     const CloseSession = () =>{
         setUser(initialState);
         removeToken();
-        showAlert('Hasta Pronto',"has cerrado sesión de forma satisfactoria, vuelve pronto", SW_ICON.SUCCESS,()=>{navigate('/')});
+        showAlert('Hasta Pronto',"has cerrado sesión de forma satisfactoria, vuelve pronto", SW_ICON.SUCCESS,"","Ok",false,"",()=>{navigate('/')});
     }
 
     return(

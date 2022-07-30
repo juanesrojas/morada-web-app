@@ -7,10 +7,15 @@ export const HTTP_VERBS = {
     PUT: "put",
     DELETE: "delete",
 };
+//es recomendable crear un diccionario para evitar errores de Typing
+export const CONTENT_TYPES = {
+    APPLICATION_JSON:'application/json',
+    MULTIPART_FORM_DATA: 'multipart/form-data'
+}
 
-const headersConfig = (token) =>{
+const headersConfig = (contentType,token) =>{
     return{
-        "Content-Type": "application/json",
+        "Content-Type": contentType,
         Accept: "application/json",
         Authorization: `Bearer ${token}`
     }
@@ -24,7 +29,8 @@ export const requestHttp = async (
         endpoint = '/',
         body = {},
         params = {}, //query params
-        token  = null
+        token  = null,
+        contentType=CONTENT_TYPES.APPLICATION_JSON
     }
 ) =>{
     try{
@@ -36,7 +42,7 @@ export const requestHttp = async (
             method,
             data:body,
             params,
-            headers: headersConfig(authToken)
+            headers: headersConfig(contentType, authToken)
         };
         return await axios(options);
     } catch (error){

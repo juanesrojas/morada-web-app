@@ -72,10 +72,10 @@ export const Login =()=>{
    
 
 
-            showAlert('Bienvenido',"Validación correcta", SW_ICON.SUCCESS,()=>{navigate('/')});
+            showAlert('Bienvenido',"Validación correcta", SW_ICON.SUCCESS,"","Ok",false,"",()=>{window.location="/"});
         }catch (error){
             console.log('error',error);
-            showAlert('Error',"Credenciales incorrectas", SW_ICON.ERROR);
+            showAlert('Error',"Credenciales incorrectas", SW_ICON.ERROR,"","Ok",false,"",);
         }
     };
 

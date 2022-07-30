@@ -32,8 +32,14 @@ const PropertiesAdminMenuItems = [
     },
 
     {
+        icon: FaStar,
+        label: 'Favoritos',
+        path: '/favorites'
+    },
+
+    {
         icon: FaPlusSquare,
-        label: 'Agregar',
+        label: 'Agregar Propiedad',
         path: '/add-property'
     },
 

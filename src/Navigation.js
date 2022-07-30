@@ -20,6 +20,7 @@ import { useContext, useEffect } from "react";
 import { getToken } from "./utils/TokenLS";
 import { UserContext } from "./contexts/UserContext";
 import { HTTP_VERBS, requestHttp } from "./utils/HttpRequest";
+import {POCImageUpload} from './pages/POCImageUpload';
 
 
 export const Navigation= () =>{
@@ -58,6 +59,7 @@ export const Navigation= () =>{
                 role:data.user.role,
                 identification:data.user.document,
                 email:data.user.email,
+                id:data.user._id,
                 isAuthenticated:true
             });
 
@@ -78,7 +80,7 @@ export const Navigation= () =>{
             <Route path='/signup' element={<Signup/>}/>
             <Route path='/add-property' element={<AddProperty/>}/>
             <Route path='/my-properties' element={<MyProperties/>}/>
-
+            <Route path='/pocimageupload' element={<POCImageUpload/>}/>
             <Route path='*' element={<NotFound/>}/>
         </Routes>
   

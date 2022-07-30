@@ -19,35 +19,42 @@ export const CITIES = {
         city:'Medellín',
         zones:{
             1:'Poblado',
-            2:'Laureles,'
+            2:'Laureles'
         }
     },
     2: {
         city:'Bogotá',
         zones:{
             1:'xxx',
-            2:'aaa,'
+            2:'aaa'
         }
     },
     3: {
         city:'Rionegro',
         zones:{
             1:'aaa',
-            2:'bbb,'
+            2:'bbb'
         }
     },
     4: {
         city:'Envigado',
         zones:{
             1:'La paz',
-            2:'Cumbres,'
+            2:'Cumbres'
         }
     },
     5:{
         city:'Sabaneta',
         zones:{
             1:'Parque',
-            2:'Aves María,'
+            2:'Aves María'
+        }
+    },
+    6:{
+        city:'La Ceja',
+        zones:{
+            1:'Parque',
+            2:'Rural'
         }
     }
 

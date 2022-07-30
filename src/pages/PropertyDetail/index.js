@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ShortMenu } from "../../components/ShortMenu";
 import { Page } from "../../components/Page";
 import { PropertyInfoCard } from "../../components/PropertyInfoCard";
-import { PrimaryText, SubTitle } from "../../globalStyles";
+import { PrimaryText, SubTitle, Title } from "../../globalStyles";
 import { PropertyImageScrolling } from "./components/PropertyImageScrolling";
 import { PropertyOwnerInfo } from "./components/PropertyOwnerInfo";
 import { PropertyDetailContainer } from "./styles";
@@ -10,19 +10,25 @@ import { useParams } from "react-router-dom";
 import { HTTP_VERBS, requestHttp } from "../../utils/HttpRequest";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
+import { SquaredButton } from "../../components/Button";
+import { FaStar } from 'react-icons/fa';
+import { showAlert , SW_ICON} from "../../utils/SwAlert";
 
 
 
 export const PropertyDetail = () =>{
 
     const {propertyId} = useParams();
-    const [property, setProperty] = useState({title:"",propertyType:{id:0, label:"null"},businessType:{id:0, label:"null"}});
+    //const [property, setProperty] = useState({title:"",propertyType:{id:0, label:"null"},businessType:{id:0, label:"null"}});
+    const [property, setProperty] = useState(null);
     //const [property, setProperty] = useState({});
     const {user, setUser} = useContext(UserContext);
     
     useEffect(()=>{
         //acciones a ejecutar
-        propertyRequest(propertyId);  
+        setTimeout(()=>{
+            propertyRequest(propertyId); 
+        },2000);         
 
     }, []);
 
@@ -48,6 +54,28 @@ export const PropertyDetail = () =>{
             console.log('error',error);           
         }
     }
+
+    const addToFavorites = async (propertyId) =>{
+        try{         
+            
+            const response = await requestHttp(
+                {
+                    method:HTTP_VERBS.POST,
+                    endpoint:`/favorites/`,
+                    body:{propertyId:propertyId}
+                    
+                }
+            );
+
+        }catch (error){
+            console.log('error',error);           
+        }
+    }
+
+    if (!property) {
+        return <p>cargando...</p>
+    }
+
     
     return (
 
@@ -65,7 +93,28 @@ export const PropertyDetail = () =>{
                     
                 </div>
                 {   user.isAuthenticated?
-                    <PropertyOwnerInfo  userName={"Juan Rojas"} userPicture={require("./components/PropertyOwnerInfo/images/profile_picture.png")} /> :<p>Inicia sesión para ponerte en contacto con el propietario, has click <a href="/login">aquí</a></p>
+                    <div>
+                        <br/>
+                        <Title>¿Te gustó esta propiedad? </Title>
+                        <SubTitle>Contacta al propietario:</SubTitle>
+                        <br/>
+                        <PropertyOwnerInfo  userName={"Juan Rojas"} userPicture={require("./components/PropertyOwnerInfo/images/profile_picture.png")} /> 
+                        <br/>
+                        <Title>Que no se te escape esta oportunidad </Title>
+                        <SubTitle>Añade esta propiedad a tus favoritos</SubTitle>
+                        <SquaredButton icon={FaStar} link="" funct={()=>showAlert('Felicidades!',"Se ha añadido esta propiedad a tu lista de favotiros", SW_ICON.SUCCESS,"","Ok",false,"",()=>{addToFavorites(propertyId)})} primaryColor={"white"} primaryBackgroundColor={"green"} hoverColor={"white"} hoverBackgroundColor={"orange"}/>
+                   
+                    </div>
+                    
+                    :
+                    <div>
+                        <br/>
+                        <Title>¿Te gustó esta propiedad?</Title>
+                        <br/>
+                        <PrimaryText>Inicia sesión para ponerte en contacto con el propietario, has click <a href="/login">aquí</a></PrimaryText>
+                    </div>
+
+                    
                 }
                 
             </PropertyDetailContainer>
