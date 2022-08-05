@@ -29,7 +29,7 @@ export const Home = () => {
 
     const [selectedPropertyType, setSelectedProperty] = useState(ALL_PROPERTIES_TYPES);
     const {user,setUser} = useContext(UserContext);
-    const [properties, setProperties] = useState([]);
+    const [properties, setProperties] = useState([{title:"",propertyType:{id:0, label:"null"},businessType:{id:0, label:"null"}}]);
  
 
 
@@ -76,7 +76,7 @@ export const Home = () => {
             );
            // const {checkProperties} = response.data;
             setProperties(response.data.checkProperties);
-            console.log('propiedades encontradas aquí:',properties);
+
 
 
 
@@ -123,9 +123,11 @@ export const Home = () => {
                 <div>
 
                     {
+
+                    properties? 
                        properties.map((item,key) => //key viene como una propiedad del mapeo, no usarle puede arrojar alertas
                            
-                            <PropertyCard {...item}/>)
+                            <PropertyCard key={key} {...item}/>) : <p>sin propiedades</p>
                             
                     }
 

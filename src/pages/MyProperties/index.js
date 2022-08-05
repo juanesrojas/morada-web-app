@@ -43,7 +43,6 @@ export const MyProperties = () => {
 
     useEffect(()=>{
         //acciones a ejecutar
-        console.log('validando propiedades...');
         propertiesRequest();    
 
     }, [selectedPropertyType]);
@@ -77,7 +76,6 @@ export const MyProperties = () => {
             );
            // const {checkProperties} = response.data;
             setProperties(response.data.checkProperties);
-            console.log('propiedades encontradas aquí:',properties);
 
 
 
@@ -92,7 +90,6 @@ export const MyProperties = () => {
             filters['propertyType']=selectedPropertyType
         };
         filters['ownerId']="62abf81c4785b2acb310a03b";
-        console.log('filter', filters);
         return filters;
     }
     
@@ -125,11 +122,11 @@ export const MyProperties = () => {
 
             </PropertyTypesContainer>
                 <div>
-                    {            console.log('propiedadesa pintar:',properties)}
+                    
                     {
                        properties.map((item,key) => //key viene como una propiedad del mapeo, no usarle puede arrojar alertas
                            
-                            <PropertyCard {...item}/>)
+                            <PropertyCard key={key} {...item}/>)
                     }
 
     

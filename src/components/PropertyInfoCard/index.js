@@ -15,7 +15,6 @@ import { getcurrencyFormat } from "../../utils/CurrencyFormat";
 export const PropertyInfoCard = (property) =>(
 
         <PropertyInfoWrapper>
-            {console.log("propiedad",property)}
             <SubTitle>{property.title}</SubTitle>
             <SecondaryText>{property.zoneName}, {property.cityName}</SecondaryText>   
             

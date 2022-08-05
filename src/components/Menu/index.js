@@ -61,14 +61,13 @@ const PropertiesAdminMenuItems = [
 
 export const Menu = (props) =>{
 const typeProfile = 1;  
-console.log(props.userProfile);  
     return(
         <MenuWrapper>
             {
-                props.userProfile ===1 && CustomerMenuItems.map(item=><MenuItem {...item} />)
+                props.userProfile ===1 && CustomerMenuItems.map((item,key)=><MenuItem key={key} {...item} />)
             }
             {
-                props.userProfile ===2 && PropertiesAdminMenuItems.map(item=><MenuItem {...item} />)
+                props.userProfile ===2 && PropertiesAdminMenuItems.map((item,key)=><MenuItem key={key} {...item} />)
             }
 
         </MenuWrapper>

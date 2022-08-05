@@ -111,14 +111,14 @@ export const AddProperty =()=>{
     
                 <FormControl>
                     <label>Título de la propiedad</label>
-                    <div class="input">
+                    <div className="input">
                         <input type="text" {...register("title",{required:true})}  />
                     </div>
                 </FormControl>
     
                 <FormControl>
                     <label>Ciudad</label>
-                    <div class="input">
+                    <div className="input">
                        
                         <select  {...register("city",{required:true})}>
                             {Object.entries(CITIES).map((item)=>(<option value={item[0]}>{item[1].city}</option>))}
@@ -128,7 +128,7 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Zona</label>
-                    <div class="input">
+                    <div className="input">
    
                         <select {...register("zone",{required:true})}>
                             {Object.entries(selectedCity.zones).map((item)=>(<option value={item[0]}>{item[1]}</option>))}
@@ -139,7 +139,7 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Descripción corta del inmueble</label>
-                    <div class="input">                        
+                    <div className="input">                        
                         <textarea rows = "5" cols = "60" name = "description" placeholder="Enter text" {...register("shortDescription",{required:true})} >
                           
                         </textarea>
@@ -148,7 +148,7 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Descripción completa del inmueble</label>
-                    <div class="input">                        
+                    <div className="input">                        
                         <textarea rows = "5" cols = "60" name = "description" placeholder="Enter text"  {...register("description",{required:true})} >
                           
                         </textarea>
@@ -157,14 +157,14 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Área (m2)</label>
-                    <div class="input">
+                    <div className="input">
                         <input type="number" {...register("area",{required:true})} />
                     </div>
                 </FormControl>
 
                 <FormControl>
                     <label>Tipo de inmueble</label>
-                    <div class="input">
+                    <div className="input">
                         <select {...register("propertyType",{required:true})}>
                             {propertyTypeList.map((item)=>(<option value={item.propertyType}>{item.label}</option>))}
                             
@@ -175,7 +175,7 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Modalidad</label>
-                    <div class="input">
+                    <div className="input">
                         <select {...register("businessType",{required:true})}>
                             {businessTypeList.map((item)=>(<option value={item.businessType}>{item.label}</option>))}
                             
@@ -185,7 +185,7 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Habitaciones</label>
-                    <div class="input">
+                    <div className="input">
                         <select >
                             <option value="N.A">N.A.</option>
                             <option value="1">1</option>
@@ -201,7 +201,7 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Baños</label>
-                    <div class="input">
+                    <div className="input">
                         <select >
                             <option value="N.A">N.A.</option>
                             <option value="1">1</option>
@@ -217,7 +217,7 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Parqueaderos</label>
-                    <div class="input">
+                    <div className="input">
                         <select >
                             <option value="0">0</option>
                             <option value="2">2</option>
@@ -229,14 +229,14 @@ export const AddProperty =()=>{
 
                 <FormControl>
                     <label>Valor ($COP)</label>
-                    <div class="input">
+                    <div className="input">
                         <input type="number" {...register("value",{required:true})} />
                     </div>
                 </FormControl>
     
                 <FormControl>
                     <label>Añadir fotografías</label>
-                    <div class="input">
+                    <div className="input">
                         <input type="file" multiple />
                     </div>
                 </FormControl>

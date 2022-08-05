@@ -12,8 +12,8 @@ import { useContext } from "react";
 import { UserContext } from "../../contexts/UserContext";
 import { SquaredButton } from "../../components/Button";
 import { FaStar } from 'react-icons/fa';
-import { showAlert , SW_ICON} from "../../utils/SwAlert";
-
+import { showAlert , closeSwal, SW_ICON} from "../../utils/SwAlert";
+import Swal from 'sweetalert2';
 
 
 export const PropertyDetail = () =>{
@@ -46,7 +46,7 @@ export const PropertyDetail = () =>{
             );
            // const {checkProperties} = response.data;
            setProperty(response.data.uniqueCheckProperty);
-            console.log('respuesta xxx:',property);
+            console.log('respuesta:',property);
             //return checkProperties;   
 
 
@@ -56,6 +56,8 @@ export const PropertyDetail = () =>{
     }
 
     const addToFavorites = async (propertyId) =>{
+        showAlert('Felicidades!',"estamos añadiendo esta propiedad a tu lista de favoritos", SW_ICON.SUCCESS,"","Ok",false,"",()=>{});
+        Swal.showLoading();
         try{         
             
             const response = await requestHttp(
@@ -66,9 +68,13 @@ export const PropertyDetail = () =>{
                     
                 }
             );
-
+            closeSwal();
+            showAlert('Felicidades!',"Se ha añadido esta propiedad a tu lista de favoritos", SW_ICON.SUCCESS,"","Ok",false,"",()=>{});
+            
         }catch (error){
-            console.log('error',error);           
+            console.log('error',error.response.data);     
+            closeSwal();     
+            showAlert('Ups!',error.response.data, SW_ICON.ERROR,"","Ok",false,"",()=>{});
         }
     }
 
@@ -102,7 +108,7 @@ export const PropertyDetail = () =>{
                         <br/>
                         <Title>Que no se te escape esta oportunidad </Title>
                         <SubTitle>Añade esta propiedad a tus favoritos</SubTitle>
-                        <SquaredButton icon={FaStar} link="" funct={()=>showAlert('Felicidades!',"Se ha añadido esta propiedad a tu lista de favotiros", SW_ICON.SUCCESS,"","Ok",false,"",()=>{addToFavorites(propertyId)})} primaryColor={"white"} primaryBackgroundColor={"green"} hoverColor={"white"} hoverBackgroundColor={"orange"}/>
+                        <SquaredButton icon={FaStar} link="" funct={()=>{addToFavorites(propertyId)}} primaryColor={"white"} primaryBackgroundColor={"green"} hoverColor={"white"} hoverBackgroundColor={"orange"}/>
                    
                     </div>
                     

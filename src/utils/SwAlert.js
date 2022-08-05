@@ -41,3 +41,7 @@ export const showAlert = (title, text, icon,textArea='',confirmBtnTxt="Ok",shwCn
     //}) //callback usando promesa
   
 }
+
+export const closeSwal = () => {
+  Swal.close();
+}

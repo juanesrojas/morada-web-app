@@ -36,7 +36,6 @@ export const requestHttp = async (
     try{
         const url = process.env.REACT_APP_BASE_API + endpoint;
         const authToken = token || getToken();
-        console.log("url: ",url);
         const options = {
             url, //url:url => url,
             method,
